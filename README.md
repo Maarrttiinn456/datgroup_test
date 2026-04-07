@@ -1,2 +1,27 @@
 # datgroup_test
 Created with CodeSandbox
+
+## Změny oproti původní konfiguraci
+
+Původní projekt byl CodeSandbox starter z roku 2019, který nešel spustit na moderním Node.js (v22).
+
+### Co bylo změněno
+
+**`react-scripts` 3.0.1 → 5.0.1**
+Verze 3.x je nekompatibilní s Node.js 16+. Verze 5.0.1 je poslední stabilní verze CRA, podporuje Node 16–22 a má nativní TypeScript podporu (webpack 5).
+
+**TypeScript 3.3.3 → 4.9.5**
+Původní TS byl v devDependencies, ale projekt neměl `tsconfig.json` ani `.tsx` soubory — TypeScript fakticky nebyl zapnutý. Verze 4.9.5 je nejvyšší kompatibilní s react-scripts 5.
+
+**Přidány `@types/react`, `@types/react-dom`, `@types/node`**
+Nutné typové definice pro TypeScript v React projektu.
+
+**Vytvořen `tsconfig.json`**
+Bez něj react-scripts TypeScript nepřepne.
+
+**`src/index.js` a `src/App.js` → `.tsx`**
+Přejmenování na `.tsx` aktivuje TypeScript kontrolu v těchto souborech.
+
+### Co bylo záměrně zachováno
+
+**React 16.12.0** — zadání pochází z CodeSandboxu postaveného na React 16. React 5 je zpětně kompatibilní s touto verzí, takže upgrade react-scripts nenutí přejít na React 18.
