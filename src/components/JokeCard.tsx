@@ -6,6 +6,7 @@ export default function JokeCard({ joke }: { joke: Joke }) {
         <div>
             <p>{joke.id}</p>
             <p>{joke.value}</p>
+            <button>Uložit jako oblíbený</button>
         </div>
     );
 }

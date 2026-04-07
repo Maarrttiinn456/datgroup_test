@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import useJoke from '../hooks/useJoke';
 import { useFavJokes } from '../contexts/FavJokesContext';
+import JokeCard from '../components/JokeCard';
 
 export default function HomePage() {
     const { joke, loading, error, fetchJoke } = useJoke();
-    const { addJoke } = useFavJokes();
     const [isRunning, setIsRunning] = useState(false);
 
     useEffect(() => {
@@ -33,14 +33,7 @@ export default function HomePage() {
             </button>
 
             {error && <p>{error}</p>}
-            {joke && (
-                <div>
-                    <p>{joke.value}</p>
-                    <button onClick={() => addJoke(joke)}>
-                        Uložit jako oblíbený
-                    </button>
-                </div>
-            )}
+            {joke && <JokeCard joke={joke} />}
         </>
     );
 }
