@@ -1,10 +1,10 @@
 .container {
     width: 100%;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
 }
 
 .main {
-    padding: 1rem 0;
+    padding: 2rem 0;
 }

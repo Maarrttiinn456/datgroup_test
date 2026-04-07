@@ -1,20 +1,50 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+import { Link, useLocation } from 'react-router-dom';
 import { useFavJokes } from '../contexts/FavJokesContext';
+import styles from './Header.module.css';
 
 export default function Header() {
+    const location = useLocation();
+
     const { favJokes } = useFavJokes();
 
     const favCount = favJokes.length;
+
     return (
-        <header>
-            <nav>
+        <header className={styles.header}>
+            <div>
+                <Link to="/">
+                    <img
+                        className={styles.logo}
+                        src="/images/nunchuck_norris.svg"
+                        alt="Chuck Norris"
+                    />
+                </Link>
+            </div>
+            <nav className={styles.nav}>
                 <ul>
                     <li>
-                        <Link to="/">Home</Link>
+                        <Link
+                            to="/"
+                            className={
+                                location.pathname === '/' ? styles.active : ''
+                            }
+                        >
+                            Home
+                        </Link>
                     </li>
                     <li>
-                        <Link to="/favorites">Favorites ({favCount})</Link>
+                        <Link
+                            to="/favorites"
+                            className={
+                                location.pathname === '/favorites'
+                                    ? styles.active
+                                    : ''
+                            }
+                        >
+                            Favorites ({favCount})
+                        </Link>
                     </li>
                 </ul>
             </nav>

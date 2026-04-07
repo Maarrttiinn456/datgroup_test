@@ -1,0 +1,54 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.jokeList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.clearBtn {
+    color: #e53e3e;
+    border: 1px solid #e53e3e;
+    background: transparent;
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition:
+        background 0.15s,
+        color 0.15s;
+}
+
+.clearBtn:hover {
+    background: #e53e3e;
+    color: #fff;
+}
+
+.page h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+@media (max-width: 1024px) {
+    .jokeList {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .jokeList {
+        grid-template-columns: 1fr;
+    }
+}

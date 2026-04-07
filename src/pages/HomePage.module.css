@@ -1,0 +1,57 @@
+.page h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+}
+
+.actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.btnPrimary {
+    background: var(--color-primary);
+    color: var(--color-bg);
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.1s;
+}
+
+.btnPrimary:hover:not(:disabled) {
+    background: var(--color-primary-dark);
+}
+
+.btnPrimary:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.btnSecondary {
+    background: transparent;
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition:
+        border-color 0.1s,
+        color 0.1s;
+}
+
+.btnSecondary:hover {
+    border-color: var(--color-text-muted);
+    color: var(--color-text);
+}
+
+.error {
+    color: #e05a4a;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
