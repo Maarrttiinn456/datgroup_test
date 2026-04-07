@@ -1,11 +1,18 @@
-import React from "react";
-import "./styles.css";
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import FavoritesPage from './pages/FavoritesPage';
+import HomePage from './pages/HomePage';
+import AppLayout from './layouts/AppLayout';
 
 export default function App() {
-  return (
-    <div className="App">
-      <h1>&lt;DAT /&gt;</h1>
-      <h2>-----------</h2>
-    </div>
-  );
+    return (
+        <div>
+            <Routes>
+                <Route element={<AppLayout />}>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/favorites" element={<FavoritesPage />} />
+                </Route>
+            </Routes>
+        </div>
+    );
 }
