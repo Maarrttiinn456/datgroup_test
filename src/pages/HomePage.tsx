@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import useJoke from '../hooks/useJoke';
 import { useFavJokes } from '../contexts/FavJokesContext';
 import JokeCard from '../components/JokeCard';
+import styles from './HomePage.module.css';
 
 export default function HomePage() {
     const { joke, loading, error, fetchJoke } = useJoke();
@@ -20,20 +21,26 @@ export default function HomePage() {
     };
 
     return (
-        <>
-            <h1>Home</h1>
-            <button
-                onClick={() => handleFetchJoke()}
-                disabled={loading && !isRunning}
-            >
-                Získej vtip
-            </button>
-            <button onClick={() => setIsRunning((running) => !running)}>
-                {isRunning ? 'Zastavit' : 'Spustit'} generování vtipů
-            </button>
+        <div className={styles.page}>
+            <h1>Chuck Norris Jokes</h1>
+            <div className={styles.actions}>
+                <button
+                    className={styles.btnPrimary}
+                    onClick={() => handleFetchJoke()}
+                    disabled={loading && !isRunning}
+                >
+                    Získej vtip
+                </button>
+                <button
+                    className={styles.btnSecondary}
+                    onClick={() => setIsRunning((running) => !running)}
+                >
+                    {isRunning ? 'Zastavit' : 'Spustit'} generování vtipů
+                </button>
+            </div>
 
-            {error && <p>{error}</p>}
+            {error && <p className={styles.error}>{error}</p>}
             {joke && <JokeCard joke={joke} />}
-        </>
+        </div>
     );
 }

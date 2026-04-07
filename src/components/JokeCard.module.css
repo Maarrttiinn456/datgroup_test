@@ -1,0 +1,53 @@
+.card {
+    background: var(--color-bg-subtle);
+    border: 1px solid var(--color-border);
+    border-top: 3px solid var(--color-primary);
+    border-radius: 6px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.categoryEmpty {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+}
+
+.category {
+    background: var(--color-primary);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+}
+
+.text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--color-text);
+}
+
+.heartBtn {
+    align-self: flex-start;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    line-height: 0;
+    transition: transform 0.15s;
+}
+
+.heartBtn:hover {
+    transform: scale(1.15);
+}
