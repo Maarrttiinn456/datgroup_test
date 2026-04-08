@@ -22,10 +22,6 @@ export function FavJokesProvider({ children }: { children: ReactNode }) {
         return stored ? JSON.parse(stored) : [];
     });
 
-    useEffect(() => {
-        localStorage.setItem('favJokes', JSON.stringify(favJokes));
-    }, [favJokes]);
-
     const addJoke = (joke: Joke) => {
         setFavJokes((prev) => {
             if (prev.find((j) => j.id === joke.id)) return prev;
@@ -43,11 +39,18 @@ export function FavJokesProvider({ children }: { children: ReactNode }) {
     };
 
     const removeJoke = (id: string) => {
-        setFavJokes(favJokes.filter((joke) => joke.id !== id));
+        setFavJokes((prev) => {
+            const updated = prev.filter((j) => j.id !== id);
+            localStorage.setItem('favJokes', JSON.stringify(updated));
+            return updated;
+        });
     };
 
     const clearJokes = () => {
-        setFavJokes([]);
+        setFavJokes(() => {
+            localStorage.removeItem('favJokes');
+            return [];
+        });
     };
 
     return (
