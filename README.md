@@ -1,6 +1,15 @@
 # datgroup_test
 
-Created with CodeSandbox
+Aplikace pro načítání náhodných vtipů z veřejného API. Uživatel může spustit automatické přehrávání nových vtipů v intervalu, označovat vtipy jako oblíbené a prohlížet si je na samostatné stránce.
+
+## Lokální spuštění
+
+```bash
+npm install
+npm start
+```
+
+Aplikace běží na http://localhost:3000.
 
 ## Změny oproti původní konfiguraci
 
@@ -30,6 +39,10 @@ Přejmenování na `.tsx` aktivuje TypeScript kontrolu v těchto souborech.
 ## Demo
 
 Projekt je nasazený na Netlify: https://datagroup-test.netlify.app/
+
+## Větvení a deployment
+
+Vývoj probíhal na větvi `develop`. Větev `main` je napojena na Netlify — každý merge do `main` automaticky spustí produkční build a nasazení.
 
 ## Technologická rozhodnutí
 
