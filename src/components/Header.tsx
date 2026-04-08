@@ -31,7 +31,7 @@ export default function Header() {
                                 location.pathname === '/' ? styles.active : ''
                             }
                         >
-                            Home
+                            Domů
                         </Link>
                     </li>
                     <li>
@@ -43,7 +43,7 @@ export default function Header() {
                                     : ''
                             }
                         >
-                            Favorites ({favCount})
+                            Oblíbené ({favCount})
                         </Link>
                     </li>
                 </ul>

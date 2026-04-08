@@ -17,7 +17,7 @@ export default function FavoritesPage() {
     return (
         <div className={styles.page}>
             <div className={styles.header}>
-                <h1>Favorites</h1>
+                <h1>Oblíbené vtipy</h1>
                 <div>
                     <button
                         className={styles.clearBtn}
